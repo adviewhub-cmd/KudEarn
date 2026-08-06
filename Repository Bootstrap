@@ -1,0 +1,34 @@
+Commit 001
+✔ Repository bootstrap
+✔ Laravel 12 scaffold
+✔ README
+✔ .gitignore
+✔ License
+✔ docs/
+✔ releases/
+✔ sql/
+
+↓
+
+Commit 002
+✔ Modular Architecture
+
+↓
+
+Commit 003
+✔ Core Module
+
+↓
+
+Commit 004
+✔ Authentication Module
+
+↓
+
+Commit 005
+✔ Users Module
+
+↓
+
+Commit 006
+✔ Wallet Module
