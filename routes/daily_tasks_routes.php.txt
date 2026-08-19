@@ -1,0 +1,37 @@
+<?php
+
+use App\Http\Controllers\DailyTaskController;
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| Kud.Earn Member Daily Tasks
+|--------------------------------------------------------------------------
+|
+| Add this block to routes/web.php.
+| These routes are already protected by the auth middleware group.
+|
+*/
+
+Route::middleware('auth')->group(function () {
+
+    Route::get(
+        '/daily-tasks',
+        [DailyTaskController::class, 'index']
+    )->name('daily-tasks.index');
+
+    Route::post(
+        '/daily-tasks/{task}/start',
+        [DailyTaskController::class, 'start']
+    )->name('daily-tasks.start');
+
+    Route::post(
+        '/daily-tasks/{task}/heartbeat',
+        [DailyTaskController::class, 'heartbeat']
+    )->name('daily-tasks.heartbeat');
+
+    Route::post(
+        '/daily-tasks/{task}/complete',
+        [DailyTaskController::class, 'complete']
+    )->name('daily-tasks.complete');
+});
