@@ -1,0 +1,33 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::table(
+            'payout_attempts',
+            function (Blueprint $table): void {
+                $table->unique(
+                    'provider_reference',
+                    'payout_attempts_provider_reference_unique'
+                );
+            }
+        );
+    }
+
+    public function down(): void
+    {
+        Schema::table(
+            'payout_attempts',
+            function (Blueprint $table): void {
+                $table->dropUnique(
+                    'payout_attempts_provider_reference_unique'
+                );
+            }
+        );
+    }
+};
